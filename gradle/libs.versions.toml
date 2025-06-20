@@ -45,7 +45,6 @@ androidx-core = { group = "androidx.test", name = "core", version.ref = "core" }
 decompose = { group = "com.arkivanov.decompose", name = "decompose", version.ref = "decompose" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
-decompose-extensions-coroutines = { group = "com.arkivanov.decompose", name = "extensions-coroutines", version.ref = "decompose" }
 essenty-lifecycle-coroutines = { group = "com.arkivanov.essenty", name = "lifecycle-coroutines", version.ref = "essenty" }
 decompose-extensions-android-compose = { group = "com.arkivanov.decompose", name = "extensions-android-compose", version.ref = "decompose" }
 
