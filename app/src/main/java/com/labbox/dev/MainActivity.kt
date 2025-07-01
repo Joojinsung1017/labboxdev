@@ -3,16 +3,10 @@ package com.labbox.dev
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.ui.Modifier
-import com.labbox.dev.ui.theme.DevTheme
 
 import com.arkivanov.decompose.defaultComponentContext
-import com.labbox.shared.counter.DefaultCounterComponent
-import com.labbox.shared.counter.CounterUi
+import com.labbox.shared.root.DefaultRootComponent
+import com.labbox.shared.root.RootContent
 
 /**
  * [학습 순서 6] - 앱 통합 이해하기
@@ -30,23 +24,17 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Decompose의 ComponentContext 생성 - Android 액티비티의 생명주기와 연결됨
-        val componentContext = defaultComponentContext()
+        // 1. Decompose 컴포넌트 생성
+        val root = DefaultRootComponent(
+            // 실제로는 RootComponent를 생성하겠지
+            componentContext = defaultComponentContext(),
+        )
 
-        // ComponentContext를 사용하여 DefaultCounterComponent 초기화
-        val counterComponent = DefaultCounterComponent(componentContext)
-
-        enableEdgeToEdge()
+        // 2. Jetpack Compose로 화면을 채우라는 명령
         setContent {
-            DevTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    // 공통 코드로 작성된 CounterUi 컴포저블 호출
-                    CounterUi(
-                        component = counterComponent,
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+            // 3. 바로 여기에 넣는 거야!
+            // 우리가 shared 모듈에 만든 공통 UI를 화면에 그리라고 지정
+            RootContent(component = root)
         }
     }
 }
