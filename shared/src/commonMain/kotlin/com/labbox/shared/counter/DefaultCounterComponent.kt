@@ -41,6 +41,7 @@ class DefaultCounterComponent(
         println("DefaultCounterComponent 초기화 완료! (with Essenty lifecycle.coroutineScope)")
     }
 
+
     // CounterComponent 인터페이스의 onIntent 메서드 구현
     override fun onIntent(intent: CounterIntent) {
         // 코루틴 스코프 내에서 Intent 처리

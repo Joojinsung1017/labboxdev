@@ -62,7 +62,9 @@ kotlin {
             dependencies {
                 implementation(libs.kotlin.stdlib)
                 // Add KMP dependencies here
-                implementation(libs.decompose)
+                implementation("com.arkivanov.decompose:decompose:3.3.0")
+                implementation("com.arkivanov.decompose:extensions-compose:3.3.0")
+                implementation("com.arkivanov.decompose:extensions-compose-experimental:3.3.0")
                 implementation(libs.kotlinx.serialization.json)
                 implementation(libs.kotlinx.coroutines.core)
                 implementation(libs.essenty.lifecycle.coroutines)
@@ -74,6 +76,7 @@ kotlin {
                 implementation(compose.ui)
                 implementation(compose.components.resources)
                 implementation(compose.components.uiToolingPreview)
+
             }
         }
 
